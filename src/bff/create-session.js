@@ -1,5 +1,5 @@
-import { removeComment } from './bff/session';
-import { ROLE } from '../constants';
+import { removeComment } from './session';
+import { ROLE } from '../constants/role';
 
 export const createSession = (roleId) => {
 	const session = {
