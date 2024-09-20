@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { server } from '../../bff/server';
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { AuthFormError, Button, H2, Input } from '../../components';
 import { useResetForm } from '../../hooks';
 import { setUser } from '../../actions';
@@ -12,7 +12,7 @@ import { selectUserRole } from '../../selectors';
 import styled from 'styled-components';
 import { ROLE } from '../../constants/role';
 
-const authFormSchema = yup.object().shape({
+const regFormSchema = yup.object().shape({
 	login: yup
 		.string()
 		.required('Please login')
@@ -28,16 +28,13 @@ const authFormSchema = yup.object().shape({
 		)
 		.min(6, 'Wrong login! Minimal length is 6 digits.')
 		.max(30, 'Wrong login! Max. length is 30 digits.'),
+	passcheck: yup
+		.string()
+		.required('Please, repeat the password')
+		.oneOf([yup.ref('password'), null], 'Passcheck does not match!'),
 });
 
-const StyledLink = styled(Link)`
-	text-align: center;
-	text-decoration: underline;
-	margin: 20px 0;
-	font-size: 18px;
-`;
-
-const AuthorisationContainer = ({ className }) => {
+const RegistrationContainer = ({ className }) => {
 	const {
 		register,
 		reset,
@@ -47,8 +44,9 @@ const AuthorisationContainer = ({ className }) => {
 		defaultValues: {
 			login: '',
 			password: '',
+			passcheck: '',
 		},
-		resolver: yupResolver(authFormSchema),
+		resolver: yupResolver(regFormSchema),
 	});
 
 	const [serverError, setServerError] = useState(null);
@@ -58,12 +56,11 @@ const AuthorisationContainer = ({ className }) => {
 
 	const roleId = useSelector(selectUserRole);
 
-	// Form RESET ->
 	useResetForm(reset);
 
 	const onSubmit = ({ login, password }) => {
 		server
-			.authorise(login, password)
+			.register(login, password)
 			.then(({ res, error }) => {
 				console.log('Response:', res, error); //DEBUG
 
@@ -83,7 +80,8 @@ const AuthorisationContainer = ({ className }) => {
 			});
 	};
 
-	const formError = errors?.login?.message || errors?.password?.message;
+	const formError =
+		errors?.login?.message || errors?.password?.message || errors?.passcheck?.message;
 	const errorMessage = formError || serverError;
 
 	if (roleId !== ROLE.GUEST) {
@@ -92,7 +90,7 @@ const AuthorisationContainer = ({ className }) => {
 
 	return (
 		<div className={className}>
-			<H2>Authorisation</H2>
+			<H2>Registration</H2>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<Input
 					type="text"
@@ -104,17 +102,21 @@ const AuthorisationContainer = ({ className }) => {
 					placeholder="password..."
 					{...register('password', { onChange: () => setServerError(null) })}
 				/>
+				<Input
+					type="password"
+					placeholder="password check..."
+					{...register('passcheck', { onChange: () => setServerError(null) })}
+				/>
 				<Button type="submit" disabled={!!formError || !!serverError}>
-					Authorise
+					Register
 				</Button>
 				{errorMessage && <AuthFormError>{errorMessage}</AuthFormError>}
-				<StyledLink to="/register">Register</StyledLink>
 			</form>
 		</div>
 	);
 };
 
-export const Authorisation = styled(AuthorisationContainer)`
+export const Registration = styled(RegistrationContainer)`
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
