@@ -1,59 +1,19 @@
-import { getUser } from './get-user';
-import { addUser } from './add-user';
-import { sessions } from './sessions';
+import {
+	authorise,
+	logout,
+	register,
+	fetchUsers,
+	fetchRoles,
+	updateUserRole,
+	removeUser,
+} from './operations';
 
 export const server = {
-	async logout(session) {
-		sessions.remove(session);
-	},
-	async authorise(authLogin, authPassword) {
-		const user = await getUser(authLogin);
-
-		if (!user) {
-			return {
-				error: 'There is not such a user',
-				res: null,
-			};
-		}
-
-		if (authPassword !== user.password) {
-			return {
-				error: 'Wrong password!',
-				res: null,
-			};
-		}
-
-		return {
-			error: null,
-			res: {
-				id: user.id,
-				login: user.login,
-				roleId: user.role_id,
-				session: sessions.create(user),
-			},
-		};
-	},
-
-	async register(regLogin, regPassword) {
-		const existedUser = await getUser(regLogin);
-
-		if (existedUser) {
-			return {
-				error: 'This login already in use',
-				res: null,
-			};
-		}
-
-		const user = await addUser(regLogin, regPassword);
-
-		return {
-			error: null,
-			res: {
-				id: user.id,
-				login: user.login,
-				roleId: user.role_id,
-				session: sessions.create(user),
-			},
-		};
-	},
+	authorise,
+	logout,
+	register,
+	fetchUsers,
+	fetchRoles,
+	updateUserRole,
+	removeUser,
 };

@@ -10,7 +10,7 @@ import { useResetForm } from '../../hooks';
 import { setUser } from '../../actions';
 import { selectUserRole } from '../../selectors';
 import styled from 'styled-components';
-import { ROLE } from '../../constants/role';
+import { ROLE } from '../../bff/constants';
 
 const authFormSchema = yup.object().shape({
 	login: yup
@@ -115,10 +115,10 @@ const AuthorisationContainer = ({ className }) => {
 };
 
 export const Authorisation = styled(AuthorisationContainer)`
-	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 0 auto;
 
 	& > form {
 		display: flex;

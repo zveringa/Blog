@@ -11,21 +11,14 @@
       "id": "418e",
       "login": "eugene",
       "password": "321321",
-      "registed_at": "2050-07-05 11:35",
-      "role_id": 2
-    },
-    {
-      "id": "6f6b",
-      "login": "augis",
-      "password": "321321",
-      "registed_at": "2054-03-06 09:41",
-      "role_id": 2
+      "registered_at": "2050-07-05 11:35",
+      "role_id": 1
     },
     {
       "id": "6dac",
       "login": "martin",
       "password": "321321",
-      "registed_at": "2056-08-14 17:43",
+      "registered_at": "2056-08-14 17:43",
       "role_id": 2
     }
   ],

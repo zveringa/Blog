@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { Button, Icon } from '../../../../components';
-import { ROLE } from '../../../../constants/role';
+import { ROLE } from '../../../../bff/constants';
 import {
 	selectUserRole,
 	selectUserLogin,
@@ -14,12 +14,6 @@ const RightAligned = styled.div`
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-`;
-
-const StyledIcon = styled.div`
-	&:hover {
-		cursor: pointer;
-	}
 `;
 
 const UserName = styled.div`
@@ -44,20 +38,18 @@ const ControlPanelContainer = ({ className }) => {
 				) : (
 					<>
 						<UserName>{login}</UserName>
-						<StyledIcon>
-							<Icon
-								id="fa-sign-out"
-								margin="0 0 0 10px"
-								onClick={() => dispatch(logout(session))}
-							/>
-						</StyledIcon>
+
+						<Icon
+							id="fa-sign-out"
+							margin="0 0 0 10px"
+							onClick={() => dispatch(logout(session))}
+						/>
 					</>
 				)}
 			</RightAligned>
 			<RightAligned>
-				<StyledIcon onClick={() => navigate(-1)}>
-					<Icon id="fa-backward" margin="10px 0 0 0" />
-				</StyledIcon>
+				<Icon id="fa-backward" margin="10px 0 0 0" onClick={() => navigate(-1)} />
+
 				<Link to="/post">
 					<Icon id="fa-file-text-o" margin="10px 0 0 16px" />
 				</Link>

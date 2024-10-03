@@ -1,5 +1,5 @@
 import { ACTION_TYPE } from '../actions';
-import { ROLE } from '../constants/role';
+import { ROLE } from '../bff/constants';
 
 const initialUserState = {
 	id: null,
