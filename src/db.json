@@ -3,7 +3,7 @@
     {
       "id": "001",
       "login": "anton",
-      "password": "qwerty123",
+      "password": "qwe321",
       "registered_at": "2050-09-22",
       "role_id": 0
     },
@@ -85,6 +85,67 @@
     }
   ],
   "comments": [
-    []
+    {
+      "id": "b6e7",
+      "author_id": null,
+      "post_id": "001",
+      "published_at": "2035-02-05 17:32",
+      "content": "mano komentaras"
+    },
+    {
+      "id": "a35a",
+      "author_id": null,
+      "post_id": "001",
+      "published_at": "2064-01-31 06:49",
+      "content": "3265;llkik"
+    },
+    {
+      "id": "45cd",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2062-10-29 02:16",
+      "content": ""
+    },
+    {
+      "id": "0681",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2056-01-17 20:53",
+      "content": ""
+    },
+    {
+      "id": "b0cd",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2050-08-01 21:56",
+      "content": "zzzzzzz"
+    },
+    {
+      "id": "ec91",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2034-07-30 22:50",
+      "content": "aaaaaaaa"
+    },
+    {
+      "id": "15d1",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2049-09-19 21:51",
+      "content": "Mano naujas komentaras"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "9a19",
+      "hash": "0.85013250614329938237290207325713708996772766113281",
+      "user": {
+        "id": "001",
+        "login": "anton",
+        "password": "qwe321",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      }
+    }
   ]
 }

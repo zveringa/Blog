@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { server } from '../../bff/server';
+import { server } from '../../bff';
 import { Navigate } from 'react-router-dom';
 import { AuthFormError, Button, H2, Input } from '../../components';
 import { useResetForm } from '../../hooks';
@@ -72,6 +72,7 @@ const RegistrationContainer = ({ className }) => {
 				// Handle successful login
 				dispatch(setUser(res));
 				// NEAISKU KUR SITA PADETI, BANDAU CIA...
+				sessionStorage.setItem('userData', JSON.stringify(res));
 			})
 
 			.catch((error) => {

@@ -9,7 +9,7 @@ export const addUser = (login, password) =>
 		body: JSON.stringify({
 			login,
 			password,
-			registed_at: generateDate(),
+			registered_at: generateDate(),
 			role_id: 2,
 		}),
 	}).then((createdUser) => createdUser.json());
