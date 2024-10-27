@@ -10,3 +10,5 @@ export * from './add-post-comment';
 export * from './remove-post-comment';
 export * from './save-post';
 export * from './remove-post';
+export * from './fetch-post';
+export * from './fetch-posts';

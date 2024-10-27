@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Header, Footer, Modal } from './components';
 import { useDispatch } from 'react-redux';
 import { setUser } from './actions';
-import { Authorisation, Post, Registration, Users } from './pages';
+import { Authorisation, Main, Post, Registration, Users } from './pages';
 
 const AppColumn = styled.div`
 	display: flex;
@@ -45,7 +45,7 @@ export const Blog = () => {
 			<Header />
 			<Page>
 				<Routes>
-					<Route path="/" element={<div>Main page </div>} />
+					<Route path="/" element={<Main />} />
 					<Route path="/login" element={<Authorisation />} />
 					<Route path="/register" element={<Registration />} />
 					<Route path="/users" element={<Users />} />

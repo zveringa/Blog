@@ -112,6 +112,20 @@
       "post_id": "001",
       "published_at": "2047-01-29 14:13",
       "content": "jlkhbkjbkjvkjghv"
+    },
+    {
+      "id": "ce9b",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2048-11-18 05:23",
+      "content": "1st comment\n"
+    },
+    {
+      "id": "d767",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2053-07-18 13:01",
+      "content": "2nd comment\n"
     }
   ],
   "sessions": [
@@ -184,6 +198,17 @@
     {
       "id": "2302",
       "hash": "0.87734310073307897326344573230016976594924926757813",
+      "user": {
+        "id": "001",
+        "login": "anton",
+        "password": "qwe321",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      }
+    },
+    {
+      "id": "4726",
+      "hash": "0.84387576659363117137502285913797095417976379394531",
       "user": {
         "id": "001",
         "login": "anton",
