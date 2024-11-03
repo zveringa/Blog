@@ -1,5 +1,5 @@
 import { addPost, updatePost } from '../api';
-import { ROLE } from '../constants';
+import { ROLE } from '../../constants';
 import { sessions } from '../sessions';
 
 export const savePost = async (hash, newPostData) => {

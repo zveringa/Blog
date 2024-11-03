@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Content, H2 } from '../../components';
 import { TableRow, UserRow } from './components';
 import { useServerRequest } from '../../hooks';
-import { ROLE } from '../../bff/constants';
+import { ROLE } from '../../constants';
 import styled from 'styled-components';
 
 const UsersContainer = ({ className }) => {

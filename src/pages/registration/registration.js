@@ -10,7 +10,7 @@ import { useResetForm } from '../../hooks';
 import { setUser } from '../../actions';
 import { selectUserRole } from '../../selectors';
 import styled from 'styled-components';
-import { ROLE } from '../../bff/constants';
+import { ROLE } from '../../constants';
 
 const regFormSchema = yup.object().shape({
 	login: yup

@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { Button, Icon } from '../../../../components';
-import { ROLE } from '../../../../bff/constants';
+import { ROLE } from '../../../../constants';
 import {
 	selectUserRole,
 	selectUserLogin,
