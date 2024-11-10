@@ -1,21 +1,13 @@
 import { transformPost } from '../transformers';
 
-export const getPosts = async (page, limit) => {
-	try {
-		const response = await fetch(
-			`http://localhost:3005/posts?_page=${page}&_limit=${limit}`,
-		);
-		if (!response.ok) throw new Error(`Error: ${response.status}`);
-
-		const loadedPosts = await response.json();
-		const links = response.headers.get('Link');
-
-		return {
-			posts: loadedPosts ? loadedPosts.map(transformPost) : [],
+export const getPosts = async (searchPhrase, page, limit) =>
+	fetch(
+		`http://localhost:3005/posts?title_like=${searchPhrase}&_page=${page}&_limit=${limit}`,
+	)
+		.then((loadedPosts) =>
+			Promise.all([loadedPosts.json(), loadedPosts.headers.get('Link')]),
+		)
+		.then(([loadedPosts, links]) => ({
+			posts: loadedPosts && loadedPosts.map(transformPost),
 			links,
-		};
-	} catch (error) {
-		console.error('Fetch failed', error);
-		return { posts: [], links: null };
-	}
-};
+		}));
