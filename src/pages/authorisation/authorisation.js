@@ -65,9 +65,6 @@ const AuthorisationContainer = ({ className }) => {
 		server
 			.authorise(login, password)
 			.then(({ res, error }) => {
-				console.log('Response:', res, error); //DEBUG
-
-				// Check for errors in the response
 				if (error) {
 					setServerError(error);
 					return;

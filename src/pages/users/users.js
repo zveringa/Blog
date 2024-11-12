@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Content, H2 } from '../../components';
+import { useSelector } from 'react-redux';
+import { PrivateContent, H2 } from '../../components';
 import { TableRow, UserRow } from './components';
 import { useServerRequest } from '../../hooks';
+import { selectUserRole } from '../../selectors';
+import { accessCheck } from '../../utils/access-check';
 import { ROLE } from '../../constants';
 import styled from 'styled-components';
 
@@ -10,13 +13,17 @@ const UsersContainer = ({ className }) => {
 	const [roles, setRoles] = useState([]);
 	const [errorMessage, setErrorMessage] = useState(null);
 	const [shouldUpdateUserList, setShouldUpdateUserList] = useState(false);
+	const userRole = useSelector(selectUserRole);
 
 	const requestServer = useServerRequest();
 
 	useEffect(() => {
+		if (!accessCheck([ROLE.ADMIN], userRole)) {
+			return;
+		}
+
 		Promise.all([requestServer('fetchUsers'), requestServer('fetchRoles')])
 			.then(([usersRes, rolesRes]) => {
-				console.log(usersRes); // Log the users' data for debugging
 				if (usersRes.error || rolesRes.error) {
 					setErrorMessage(usersRes.error || rolesRes.error);
 					return;
@@ -29,17 +36,21 @@ const UsersContainer = ({ className }) => {
 				setErrorMessage('Failed to load users or roles.');
 				console.error('Error fetching data:', err);
 			});
-	}, [requestServer, shouldUpdateUserList]);
+	}, [requestServer, shouldUpdateUserList, userRole]);
 
 	const onUserRemove = (userId) => {
+		if (!accessCheck([ROLE.ADMIN], userRole)) {
+			return;
+		}
+
 		requestServer('removeUser', userId).then(() => {
 			setShouldUpdateUserList(!shouldUpdateUserList);
 		});
 	};
 
 	return (
-		<div className={className}>
-			<Content error={errorMessage}>
+		<PrivateContent access={[ROLE.ADMIN]} serverError={errorMessage}>
+			<div className={className}>
 				<H2>Users</H2>
 
 				<div>
@@ -63,8 +74,8 @@ const UsersContainer = ({ className }) => {
 						/>
 					))}
 				</div>
-			</Content>
-		</div>
+			</div>
+		</PrivateContent>
 	);
 };
 
@@ -74,5 +85,5 @@ export const Users = styled(UsersContainer)`
 	align-items: center;
 	margin: 0 auto;
 	width: 570px;
-	фот-сизе: 18пж;
+	font-size: 18px;
 `;
