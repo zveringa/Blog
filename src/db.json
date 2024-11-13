@@ -3,7 +3,7 @@
     {
       "id": "001",
       "login": "anton",
-      "password": "qwe321",
+      "password": "321321",
       "registered_at": "2050-09-22",
       "role_id": 0
     },
@@ -133,6 +133,27 @@
       "post_id": "001",
       "published_at": "2053-07-18 13:01",
       "content": "2nd comment\n"
+    },
+    {
+      "author_id": "6dac",
+      "post_id": "001",
+      "published_at": "2049-06-17 09:42",
+      "content": "3d comment",
+      "id": "mNWglLo"
+    },
+    {
+      "author_id": "6dac",
+      "post_id": "001",
+      "published_at": "2047-09-05 20:19",
+      "content": "New Martins comment\n",
+      "id": "TZhmLBa"
+    },
+    {
+      "author_id": "418e",
+      "post_id": "001",
+      "published_at": "2061-10-27 15:43",
+      "content": "gviviv",
+      "id": "rZNCa3t"
     }
   ],
   "sessions": [
@@ -300,6 +321,17 @@
         "roleId": 0
       },
       "id": "sIozi0y"
+    },
+    {
+      "hash": "0.92404004485532320600782441033516079187393188476563",
+      "user": {
+        "id": "418e",
+        "login": "eugene",
+        "password": "321321",
+        "registeredAt": "2050-07-05 11:35",
+        "roleId": 1
+      },
+      "id": "pfZifeL"
     }
   ]
 }
