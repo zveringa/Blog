@@ -332,6 +332,17 @@
         "roleId": 1
       },
       "id": "pfZifeL"
+    },
+    {
+      "hash": "0.01067291620796484430400141718564555048942565917969",
+      "user": {
+        "id": "001",
+        "login": "anton",
+        "password": "321321",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      },
+      "id": "KfyODpp"
     }
   ]
 }
