@@ -1,0 +1,25 @@
+[33me777ba4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mBLOG-Full-Stack-2[m[33m, [m[1;31morigin/BLOG-Full-Stack-2[m[33m)[m Remove node_modules from tracking
+[33m0d34b5e[m Missing file for backend added: app.js, package-lock.json, package.json, server.js_11-01-25
+[33m62db976[m Blog_clean_11-01-25
+[33m04e015c[m Blog-Full-Stack-2; Remove .env file from tracking.
+[33mefa6966[m[33m ([m[1;31morigin/BLOG-full-stack[m[33m, [m[1;32mBLOG-full-stack[m[33m)[m BLOG-full-stack with .gitignore
+[33m1877ee5[m Blog full-stack
+[33m35c4f61[m[33m ([m[1;31morigin/BLOG-026[m[33m, [m[1;32mBLOG-026[m[33m)[m Typisation of Components
+[33m0637b3d[m[33m ([m[1;31morigin/BLOG-025[m[33m, [m[1;32mBLOG-025[m[33m)[m Access to Buttons created
+[33m4c00d7a[m[33m ([m[1;31morigin/BLOG-024[m[33m, [m[1;32mBLOG-024[m[33m)[m Error Pages created
+[33md7e878b[m[33m ([m[1;31morigin/BLOG-023[m[33m, [m[1;32mBLOG-023[m[33m)[m Search on Main page created, pagination works
+[33mf7cf844[m[33m ([m[1;31morigin/BLOG-022[m[33m, [m[1;32mBLOG-022[m[33m)[m Pagination created/with problems, fetch-posts doesn't return links, (can't obtain last page number)
+[33me7b462d[m[33m ([m[1;31morigin/BLOG-021[m[33m, [m[1;32mBLOG-021[m[33m)[m Main page created
+[33m3b775a9[m[33m ([m[1;31morigin/BLOG-017[m[33m, [m[1;32mBLOG-017[m[33m)[m Delete Post and New Post page performed
+[33mabca908[m[33m ([m[1;31morigin/BLOG-016[m[33m, [m[1;31morigin/BLOG-015[m[33m, [m[1;32mBLOG-016[m[33m, [m[1;32mBLOG-015[m[33m)[m Post reduction created
+[33mccf64dd[m[33m ([m[1;31morigin/B-OG-020[m[33m, [m[1;32mB-OG-020[m[33m)[m Modal window created and comment cancel
+[33m83615ad[m[33m ([m[1;31morigin/BLOG-014[m[33m, [m[1;32mBLOG-014[m[33m)[m Page POST creation
+[33ma585939[m[33m ([m[1;31morigin/BLOG-013[m[33m, [m[1;32mBLOG-013[m[33m)[m USERS page is created
+[33m0276cd8[m[33m ([m[1;31morigin/BLOG-012[m[33m, [m[1;32mBLOG-012[m[33m)[m Registration page is created
+[33m8a73a10[m[33m ([m[1;31morigin/BLOG=010[m[33m, [m[1;32mBLOG=010[m[33m)[m Authorisation  page creation
+[33m021859c[m Footer created
+[33m02c9cad[m[33m ([m[1;31morigin/Blog-009[m[33m, [m[1;32mBlog-009[m[33m)[m Header Created
+[33m9d5e992[m[33m ([m[1;31morigin/BLOG-008[m[33m, [m[1;31morigin/BLOG-007[m[33m, [m[1;32mBLOG-008[m[33m, [m[1;32mBLOG-007[m[33m)[m Main Blog's component w/routing created
+[33md57f6a6[m BFF created
+[33m2835970[m[33m ([m[1;31morigin/BLOG-006[m[33m, [m[1;32mBLOG-006[m[33m)[m DB filling up
+[33m4fc78b8[m[33m ([m[1;31morigin/BLOG-003[m[33m, [m[1;32mmain[m[33m, [m[1;32mBLOG-003[m[33m)[m Project BLOG setup
